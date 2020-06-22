@@ -59,7 +59,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'dev.mynamespace'
+    environment: 'toharikrsample.default'
     strategy:
       runOnce:
         deploy:
