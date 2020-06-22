@@ -17,6 +17,7 @@ variables:
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'devopsazure66containerregistry20275f61-auth'
+  releaseBranchName: 'release'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -44,10 +45,15 @@ stages:
     - upload: manifests
       artifact: manifests
 
-- stage: Deploy
-  displayName: Deploy stage
+- stage: Dev
+  displayName: 'Deploy to the dev environment'
   dependsOn: Build
-
+  condition: |
+    and
+    (
+      succeeded(),
+      eq(variables['Build.SourceBranchName'], variables['releaseBranchName'])
+    )
   jobs:
   - deployment: Deploy
     displayName: Deploy
