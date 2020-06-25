@@ -1,3 +1,4 @@
 variables:
   resourcegroup: 'testrg'
   aksname: 'testaks'
+  vmImageName: 'ubuntu-latest'
