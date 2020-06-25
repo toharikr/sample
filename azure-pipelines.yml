@@ -35,6 +35,7 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    
     - task: display
       debug:
         msg: "values are {{ resourcegroup }} and cluster {{ aksname }}"
