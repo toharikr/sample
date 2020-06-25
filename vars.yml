@@ -3,7 +3,7 @@ variables:
   aksname: 'testaks'
   dockerRegistryServiceConnection: '0c105de4-8759-4b9f-8ddb-e085ad385fde'
   imageRepository: 'toharikrsample'
-  containerRegistry: 'devopsazure66containerregistry.azurecr.io'
+  containerRegistry: 'myRegistry'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'devopsazure66containerregistry20275f61-auth'
