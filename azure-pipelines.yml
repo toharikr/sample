@@ -10,6 +10,8 @@ resources:
 
 variables:
 
+- template: vars.yml 
+
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '0c105de4-8759-4b9f-8ddb-e085ad385fde'
   imageRepository: 'toharikrsample'
@@ -24,6 +26,7 @@ variables:
   
 
 stages:
+  
 - stage: Build
   displayName: Build stage
   jobs:  
@@ -32,6 +35,9 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    - task: display
+      debug:
+        msg: values are {{ resourcegroup }} and cluster {{ aksname }}
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
