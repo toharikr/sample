@@ -1,7 +1,6 @@
 variables:
   resourcegroup: 'testrg'
   aksname: 'testaks'
-  vmImageName: 'ubuntu-latest'
   dockerRegistryServiceConnection: '0c105de4-8759-4b9f-8ddb-e085ad385fde'
   imageRepository: 'toharikrsample'
   containerRegistry: 'devopsazure66containerregistry.azurecr.io'
